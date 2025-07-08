@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motivational Poster Generator</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodLifted - Motivational Poster Generator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
+  <header>
     <h1>MoodLifted</h1>
     <p>Motivation that matches your mood</p>
   </header>
 
   <main>
     <section class="card">
-      <div class="form-group">
-        <label for="mood">Your Mood</label>
-        <select id="mood">
-          <option>Select your current mood</option>
-          <option>Stressed</option>
-          <option>Hopeful</option>
-          <option>Stuck</option>
-          <option>Excited</option>
-          <option>Lazy</option>
-        </select>
+      <!-- Mood Buttons -->
+      <div class="mood-buttons">
+        <a href="hopeful.html" target="poster-frame" onclick="updateOverlay(this.href)">Hopeful</a>
+        <a href="stressed.html" target="poster-frame" onclick="updateOverlay(this.href)">Stressed</a>
+        <a href="excited.html" target="poster-frame" onclick="updateOverlay(this.href)">Excited</a>
+        <a href="lazy.html" target="poster-frame" onclick="updateOverlay(this.href)">Lazy</a>
       </div>
 
-      <div class="form-group">
-        <label for="goal">Your Goal</label>
-        <input type="text" id="goal" placeholder="e.g., ace my exams" />
-      </div>
+      <!-- Optional Goal Input (disabled visually) -->
+      <p id="caption"> to view the poster as full webpage click on the preview below</p>
 
-      <!-- Using hyperlink styled as a button -->
-      <a href="#poster" class="link-button">Generate Poster</a>
-
-      <div id="poster" class="poster-preview">
-        <h2>Your Poster Appears Here</h2>
-        <p>Select a mood and goal, then click the button to generate.</p>
+      <!-- Poster Preview -->
+      <div class="poster-preview">
+        <iframe name="poster-frame" title="Poster Preview"></iframe>
+        <a href="#" target="_blank" id="overlay-link" class="iframe-overlay" aria-label="Open full poster page"></a>
       </div>
-      
     </section>
   </main>
 
   <footer>
     © 2025 MoodLifted · Made with 💜 pure HTML & CSS
   </footer>
+
+  <!-- Only 1-line JavaScript to update overlay link -->
+  <script>
+    function updateOverlay(href) {
+      document.getElementById('overlay-link').href = href;
+    }
+  </script>
 </body>
 </html>
