@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoodLifted - Motivational Poster Generator</title>
+  <title>Motivational Poster Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,8 +22,8 @@
         <a href="lazy.html" target="poster-frame" onclick="updateOverlay(this.href)">Lazy</a>
       </div>
 
-      <!-- Optional Goal Input (disabled visually) -->
-      <p id="caption"> to view the poster as full webpage click on the preview below</p>
+      
+      <p id="caption"> Select your current mood<br/>To view the poster as full webpage click on the preview below</p>
 
       <!-- Poster Preview -->
       <div class="poster-preview">
@@ -37,7 +37,7 @@
     © 2025 MoodLifted · Made with 💜 pure HTML & CSS
   </footer>
 
-  <!-- Only 1-line JavaScript to update overlay link -->
+  <!--1-line JavaScript -->
   <script>
     function updateOverlay(href) {
       document.getElementById('overlay-link').href = href;
